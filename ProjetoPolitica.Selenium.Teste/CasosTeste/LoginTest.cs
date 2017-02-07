@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace ProjetoPolitica.Selenium.Teste.CasosTeste
@@ -18,9 +19,11 @@ namespace ProjetoPolitica.Selenium.Teste.CasosTeste
         [Test]
         public void LogarComEleitor()
         {
-            IWebDriver driver = new FirefoxDriver();
+            IWebDriver driver = new ChromeDriver();
 
+            Thread.Sleep(1000);
             Login.FazerLoginEleitor(driver);
+            
 
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(6));
             wait.Until(ExpectedConditions.UrlContains("http://localhost:8080/Politica/"));

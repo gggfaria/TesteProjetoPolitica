@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace ProjetoPolitica.Selenium.Teste.Comum
@@ -15,12 +16,13 @@ namespace ProjetoPolitica.Selenium.Teste.Comum
           
             driver.Navigate().GoToUrl("http://localhost:8080/Politica/login/logar");
 
-            IWebElement userName = driver.FindElement(By.Name("j_username"));
-            IWebElement password = driver.FindElement(By.Name("j_password"));
+            IWebElement userName = driver.FindElement(By.Id("login_usuario"));
+            IWebElement password = driver.FindElement(By.Id("login_senha"));
 
             userName.SendKeys("gabrielguima@mail.com");
             password.SendKeys("senha");
 
+            Thread.Sleep(1000);
             userName.Submit();
             
         }
@@ -30,11 +32,13 @@ namespace ProjetoPolitica.Selenium.Teste.Comum
 
             driver.Navigate().GoToUrl("http://localhost:8080/Politica/login/logar");
 
-            IWebElement userName = driver.FindElement(By.Name("j_username"));
-            IWebElement password = driver.FindElement(By.Name("j_password"));
+            IWebElement userName = driver.FindElement(By.Id("login_usuario"));
+            IWebElement password = driver.FindElement(By.Id("login_senha"));
+
 
             userName.SendKeys("joao.silva@mail.com");
             password.SendKeys("senha");
+            Thread.Sleep(1000);
             userName.Submit();
 
         }
