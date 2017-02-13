@@ -51,8 +51,8 @@ namespace ProjetoPolitica.Selenium.Teste.CasosTeste
 
             IWebElement divSucesso = driver.FindElement(By.ClassName("notifyjs-bootstrap-success"));
 
-            Assert.NotNull(divSucesso);          
-
+            Assert.NotNull(divSucesso);
+            driver.Close();
         }
 
         [Test]
@@ -72,7 +72,7 @@ namespace ProjetoPolitica.Selenium.Teste.CasosTeste
 
             IWebElement divSucesso = driver.FindElement(By.ClassName("notifyjs-bootstrap-success"));
             Assert.NotNull(divSucesso);
-
+            driver.Close();
         }
 
 

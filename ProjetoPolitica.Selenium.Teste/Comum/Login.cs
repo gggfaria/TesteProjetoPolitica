@@ -36,11 +36,13 @@ namespace ProjetoPolitica.Selenium.Teste.Comum
             IWebElement password = driver.FindElement(By.Id("login_senha"));
 
 
+            Thread.Sleep(500);
             userName.SendKeys("joao.silva@mail.com");
             password.SendKeys("senha");
-            Thread.Sleep(1000);
+           
             userName.Submit();
-
+            Thread.Sleep(1000);
+      
         }
 
     }
