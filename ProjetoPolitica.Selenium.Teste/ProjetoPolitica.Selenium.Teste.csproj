@@ -57,6 +57,7 @@
   <ItemGroup>
     <Compile Include="CasosTeste\EleitorTest.cs" />
     <Compile Include="CasosTeste\LoginTest.cs" />
+    <Compile Include="CasosTeste\PerguntaTest.cs" />
     <Compile Include="CasosTeste\PropostaTest.cs" />
     <Compile Include="Comum\Login.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
