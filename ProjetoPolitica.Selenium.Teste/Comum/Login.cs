@@ -11,7 +11,7 @@ namespace ProjetoPolitica.Selenium.Teste.Comum
 {
     static class Login
     {
-        public static void FazerLoginEleitor(IWebDriver driver)
+        public static void FazerLoginEleitor(IWebDriver driver, string login, string senha)
         {
           
             driver.Navigate().GoToUrl("http://localhost:8080/Politica/login/logar");
@@ -19,15 +19,15 @@ namespace ProjetoPolitica.Selenium.Teste.Comum
             IWebElement userName = driver.FindElement(By.Id("login_usuario"));
             IWebElement password = driver.FindElement(By.Id("login_senha"));
 
-            userName.SendKeys("gabrielguima@mail.com");
-            password.SendKeys("senha");
+            userName.SendKeys(login);
+            password.SendKeys(senha);
 
             Thread.Sleep(1000);
             userName.Submit();
             
         }
 
-        public static void FazerLoginPolitico(IWebDriver driver)
+        public static void FazerLoginPolitico(IWebDriver driver, string login, string senha)
         {
 
             driver.Navigate().GoToUrl("http://localhost:8080/Politica/login/logar");
@@ -36,10 +36,12 @@ namespace ProjetoPolitica.Selenium.Teste.Comum
             IWebElement password = driver.FindElement(By.Id("login_senha"));
 
 
+
             Thread.Sleep(500);
             userName.SendKeys("joao.silva@mail.com");
             password.SendKeys("senha");
            
+
             userName.Submit();
             Thread.Sleep(1000);
       

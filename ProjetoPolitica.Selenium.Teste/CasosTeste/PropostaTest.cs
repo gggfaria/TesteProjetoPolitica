@@ -21,7 +21,7 @@ namespace ProjetoPolitica.Selenium.Teste.CasosTeste
         {
             IWebDriver driver = new FirefoxDriver();
 
-            Login.FazerLoginPolitico(driver);
+            Login.FazerLoginPolitico(driver, "joao.silva@mail.com", "senha");
 
             driver.Navigate().GoToUrl("http://localhost:8080/Politica/proposta/index");
             IWebElement linkFormEditar = driver.FindElement(By.Id("1"));
@@ -61,7 +61,7 @@ namespace ProjetoPolitica.Selenium.Teste.CasosTeste
             IWebDriver driver = new ChromeDriver();
 
           
-            Login.FazerLoginEleitor(driver);
+            Login.FazerLoginEleitor(driver, "gabrielguima@mail.com", "senha");
 
             driver.Navigate().GoToUrl("http://localhost:8080/Politica/proposta/detalhes/1");
             IWebElement inputRating = driver.FindElement(By.CssSelector("label[for=rating4]"));
@@ -75,6 +75,27 @@ namespace ProjetoPolitica.Selenium.Teste.CasosTeste
             driver.Close();
         }
 
+
+        [Test]
+        public void EditarStatus()
+        {
+            IWebDriver driver = new ChromeDriver();
+
+            Login.FazerLoginPolitico(driver, "f3lpz@hotmail.com", "12345");
+
+            driver.Navigate().GoToUrl("http://localhost:8080/Politica/proposta/index");
+            IWebElement linkFormEditar = driver.FindElement(By.Name("status1"));
+            linkFormEditar.Click();
+            Thread.Sleep(1000);           
+            IWebElement selectArea = driver.FindElement(By.Name("status"));          
+            selectArea.SendKeys("CUMPRIDA");
+            selectArea.Submit();
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
+            wait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(By.ClassName("notifyjs-bootstrap-base")));
+            IWebElement divSucesso = driver.FindElement(By.ClassName("notifyjs-bootstrap-success"));
+            Assert.NotNull(divSucesso);
+
+        }
 
     }
 }

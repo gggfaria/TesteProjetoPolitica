@@ -17,12 +17,12 @@ namespace ProjetoPolitica.Selenium.Teste.CasosTeste
     class LoginTest
     {
         [Test]
-        public void LogarComEleitor()
+        public void LogarComEleitor(string login, string senha)
         {
             IWebDriver driver = new ChromeDriver();
 
             Thread.Sleep(1000);
-            Login.FazerLoginEleitor(driver);
+            Login.FazerLoginEleitor(driver, login, senha);
             
 
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(6));
@@ -35,11 +35,11 @@ namespace ProjetoPolitica.Selenium.Teste.CasosTeste
         }
 
         [Test]
-        public void LogarComPolitico()
+        public void LogarComPolitico(string login, string senha)
         {
             IWebDriver driver = new ChromeDriver();
 
-            Login.FazerLoginPolitico(driver);
+            Login.FazerLoginPolitico(driver, login, senha);
 
             
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(6));
