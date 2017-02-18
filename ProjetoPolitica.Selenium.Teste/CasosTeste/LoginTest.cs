@@ -22,7 +22,7 @@ namespace ProjetoPolitica.Selenium.Teste.CasosTeste
             IWebDriver driver = new ChromeDriver();
 
             Thread.Sleep(1000);
-            Login.FazerLoginEleitor(driver, login, senha);
+            Login.FazerLoginEleitor(driver);
             
 
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(6));
@@ -35,11 +35,11 @@ namespace ProjetoPolitica.Selenium.Teste.CasosTeste
         }
 
         [Test]
-        public void LogarComPolitico(string login, string senha)
+        public void LogarComPolitico()
         {
             IWebDriver driver = new ChromeDriver();
 
-            Login.FazerLoginPolitico(driver, login, senha);
+            Login.FazerLoginPolitico(driver);
 
             
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(6));
