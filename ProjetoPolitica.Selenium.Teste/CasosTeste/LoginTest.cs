@@ -17,7 +17,7 @@ namespace ProjetoPolitica.Selenium.Teste.CasosTeste
     class LoginTest
     {
         [Test]
-        public void LogarComEleitor(string login, string senha)
+        public void LogarComEleitor()
         {
             IWebDriver driver = new ChromeDriver();
 

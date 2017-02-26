@@ -8,6 +8,7 @@
 *.sln
 *.jpg
 *.pdf
+*.dll
 
 # Build results
 [Dd]ebug/

@@ -27,6 +27,10 @@ namespace ProjetoPolitica.Selenium.Teste.CasosTeste
          
 
             Thread.Sleep(1000);
+            IWebElement linkFormEditar = driver.FindElement(By.XPath("//a[@title='Abrir edição da proposta']"));
+            linkFormEditar.Click();
+
+            Thread.Sleep(500);
             IWebElement inputDescricao = driver.FindElement(By.Name("descricao"));
             IWebElement inputResumo = driver.FindElement(By.Name("resumo"));
             IWebElement inputTitulo = driver.FindElement(By.Name("titulo"));
@@ -36,7 +40,7 @@ namespace ProjetoPolitica.Selenium.Teste.CasosTeste
             inputResumo.Clear();
             inputTitulo.Clear();
 
-
+            
             inputDescricao.SendKeys("Teste Proposta nova sobre meio ambiente Teste Proposta nova sobre meio ambiente Teste Proposta nova sobre meio ambiente Teste Proposta nova sobre meio ambiente.");
             inputResumo.SendKeys("Teste Proposta nova sobre meio ambiente Teste Proposta nova sobre meio ambiente.");
             inputTitulo.SendKeys("Proposta para diminuir o desmatamento da amazonia");
@@ -93,6 +97,7 @@ namespace ProjetoPolitica.Selenium.Teste.CasosTeste
             wait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(By.ClassName("notifyjs-bootstrap-base")));
             IWebElement divSucesso = driver.FindElement(By.ClassName("notifyjs-bootstrap-success"));
             Assert.NotNull(divSucesso);
+            driver.Close();
 
         }
 

@@ -19,7 +19,7 @@ namespace ProjetoPolitica.Selenium.Teste.Comum
             IWebElement userName = driver.FindElement(By.Id("login_usuario"));
             IWebElement password = driver.FindElement(By.Id("login_senha"));
 
-            userName.SendKeys("gabrielguima@mail.com");
+            userName.SendKeys("gabrielguima93@gmail.com");
             password.SendKeys("senha");
 
             Thread.Sleep(1000);
